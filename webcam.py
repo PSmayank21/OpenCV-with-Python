@@ -35,27 +35,28 @@ while cam.isOpened():
 
 	#if ret == True:
 
-		#cv2.imshow('frame', frame) 
-	#Display the frame.
+		#cv2.imshow('frame', frame)
 
+	#Display the frame.
 	cv2.imshow('frame', frame)
-	'''The first parameter is the name of the window.
-	The second parameter is the frame/image to be shown.
+	'''The first parameter is the user defined name for the window that pops up.
+	The second parameter is the frame (the variable in which the image is stored) to be displayed.
 	'''
 
 	if cv2.waitKey(1) == 27:
-		cam.release()
-		'''Close the capturing device'''
-
-		cv2.destroyAllWindows()
-		'''Destroy all the windows formed'''
-
-		break
-
 		'''The waitKey function is a keyboard interrupt.
 		The function waitKey waits for a key event for 'delay'(here 1 millisecond) milliseconds 
-			before executing the next line of code.
-		In the above code if the Escape key is pressed(27 is the ASCII for escape) the code
+			before executing the next line of code.'''
+
+		#Close the capturing device.
+		cam.release()
+		
+		#Destroy the window formed.
+		cv2.destroyWindow('frame')
+		
+		break
+
+		'''In the above code if the Escape key is pressed(27 is the ASCII for escape) the code
 		    closes the capturing device, closes all the windows created during the execution of the program 
 		    and breaks out of the while loop.
 		'''
